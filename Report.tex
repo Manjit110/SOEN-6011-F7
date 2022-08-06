@@ -1,0 +1,848 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=0.75in,right=0.75in,top=1.5in,bottom=1.5in,footskip=.25in]{geometry}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{url}
+\usepackage[ruled]{algorithm2e}
+
+    
+
+\newcommand{\Author}{Manjit Singh(40185580)}
+\newcommand{\ProjectName}{Function 7: Power Function}
+\newcommand{\ProblemName}{Problem 1}
+\newcommand{\Title}{}
+\newcommand{\Course}{\textbf{SOEN-6011 \vspace{0.5cm} Software Engineering Processes}}
+\newcommand{\ProfessorName}{Dr. Pankaj Kamthan}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %New command for thickness of line
+
+
+\centering
+\includegraphics[scale=.7]{logo.png}\\[1cm]
+\textsc{\Large \Course} \\ [0.5cm]
+
+%--------
+% TITLE
+%--------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries ETERNITY \\ [5mm]  \ProjectName \\ [0.4cm]
+\HRule \\[1.5cm]
+
+
+%---------
+% TAIL SECTION
+%---------
+
+\vspace{5cm}
+\Large \emph{\textbf{Professor: \ProfessorName}}\\
+\Large \emph{\textbf{Author: \Author}}\\
+
+\vfill
+\end{titlepage}
+
+
+
+
+
+\newpage
+
+\begin{document}
+\begin{center}
+    \chapter{\Large\textbf{PROBLEM 1}}
+\end{center}
+
+\section{Power Function}
+\subsection{Definition of the Function}
+A power function is represented as:
+\begin{equation} 
+\label{Power_func}
+f(x) = x^y
+\end{equation}
+It is read as x is raised to the power y, where x is the base vale and y is the exponent/power value. 
+
+
+\subsection{Domain of the Function}
+It depends upon the power of the function:-
+\begin{itemize}
+
+	\item If power p is a non-negative integer, the domain is all real numbers:  (- $\infty$,$\infty$).
+	
+	\item If power p is a negative integer, the domain is all real numbers excluding zero ( (- $\infty$, 0) $\cup$ (0,$\infty$) )
+	
+	\item If power p is a rational number expressed in lowest terms as a/b and b is even and p \textgreater \space 0, the domain is all non-negative real numbers: (0,$\infty$) and {x $\mid$ x ≥ 0}.
+	
+	If p \textless \space 0, The domain is positive real numbers :(0,$\infty$) and {x $\mid$ x \textgreater \space 0}.
+	
+	\item If power p is a rational number expressed in lowest terms as a/b and b is odd, p \textless \space 0, The domain is all real numbers.
+	
+	If p \textless \space 0, The domain is all real numbers not including zero.
+
+\end{itemize}
+
+\subsection{Co-Domain of the function}
+\begin{itemize}
+
+    \item The co-domain of a function is the set of its possible outputs.
+    
+    \item Co-Domain of power function consists to real numbers.
+        
+\end{itemize}
+
+
+
+\subsection{Context of Use of Power Function}
+
+\item An analysis of the many circumstances under which a software system is employed in various working environments
+
+\space
+\begin{enumerate*}
+    \item \large \textbf{Technical Users - }
+\end{enumerate*}
+\space
+\begin{itemize}
+    \item \textbf{Software Developers} - The system's creators utilise it to see how they might increase productivity in terms of speed and accuracy.
+
+    \item \textbf{Testers} -The system is tested to determine whether it functions as intended. They will in this instance determine whether or not the calculator produces highly precise results.
+
+    \item \textbf{Concerned Stakeholders} - These could be the investors who are mainly inclined towards the business profit.
+    
+    \item \textbf{Project Manager} - They are concerned whether everything is being developed properly and will be delivered before the deadline.
+\end{itemize}
+
+\begin{enumerate*}
+    \item \large \textbf{Non-Technical Users - }
+\end{enumerate*}
+
+\begin{itemize}
+    \item \textbf{University Students} - For their precise math calculations where they must compute the power where x and y are really huge integers, students can utilise this scientific calculator.
+    
+    \item \textbf{Professors and Teachers} - They can use this tool for helping them in the projects and assignments.
+
+    \item \textbf{Academic Researchers} - This scientific calculator is available for use by researchers. They can use it to assess how well different calculators perform in terms of accuracy, productivity, and turnaround time.
+
+\end{itemize}
+\newpage
+\begin{center}
+    \chapter{\Large\textbf{PROBLEM 2}}
+\end{center}
+\section{Requirements Specification}
+\subsection{List of Abbrevations}
+
+
+\begin{table}[htp]
+	\centering
+	\caption{Abbreviations.} \vspace{0.5cm} \label{tab:definition_table} 
+	\begin{tabular}{||c|c||}
+		\hline  \hline \textbf{Terms} & \textbf{Definition} \\
+		\hline \hline
+		FR & Funtional Requirement  \\ 
+		\hline
+		NFR & Non-Functional Requirement  \\
+		\hline
+		
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Constraints and Assumptions}
+\begin{itemize}
+	\item There are no default values; the end user must add the values for the base and exponent.
+	\item Only real numbers should be entered by the user.
+	\item A certain amount of base and exponent values can be entered by the user. Big Integers or decimals are not handled by the system.
+\end{itemize}
+
+
+
+
+\section{Requirememts}
+
+\subsection{Functional Requirements}
+\begin{itemize}
+
+
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR1  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & High  \\
+		\hline
+		\textbf{Risk} & High  \\ 
+		\hline
+		\textbf{Description} & Once the calculator is on the system asks the user\\  & to enter the value of x and y and values should be \\ & real number otherwise the system stops.  \\
+		\hline
+		\textbf{Rationale} & In order to start the process we get the values from user.   \\
+		\hline
+		
+	\end{tabular}
+	
+	\newpage
+	
+\item		\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR2  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 2  \\
+		\hline
+		\textbf{Risk} & High  \\ 
+		\hline
+		\textbf{Description} & When a user enters a value that is not a real number, \\&the system should prompt the user to provide a real number\\& and display an error message.\\
+		\hline
+		\textbf{Rationale} & Only real numbers should be used as input for calculations.   \\
+		\hline
+		
+	\end{tabular}
+	
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR3  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 2  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & The user can do the calculation get results then \\& move on to next calculation with having him/her\\& to re run the system or exiting the sytem.\\
+		\hline
+		\textbf{Rationale} & Easy Navigation and Usability of the System.\\
+		\hline
+		
+	\end{tabular}
+	
+	
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR4  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 2  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & The respective user of the system should be given a choice \\ & at the start of the program whether he or she wants to continue or exit.\\
+		\hline
+		\textbf{Rationale} & Only real numbers should be used as input for calculations.   \\
+		\hline
+		
+	\end{tabular}
+	
+\item		\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR5  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 13 \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & If the value entered of the base is 0 then the \\& system should display an error message. \\
+		\hline
+		\textbf{Rationale} & Because 0 raised to the power anything is 0.   \\
+		\hline
+		
+	\end{tabular}
+	
+	
+	
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR6  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 4  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & Base is 0 and exponent is negative the system should\\& display error message\\
+		\hline
+		\textbf{Rationale} & 0 raised to the power of negative number is undefined.   \\
+		\hline
+		
+	\end{tabular}
+	
+	\space
+	
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & FR7  \\ 
+		\hline
+		\textbf{TYPE} & Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 4  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & When base is negative and the power is fraction\\& the result is undefined. So the system should display error message.\\
+		\hline
+		\textbf{Rationale} & Negative base cannot have fraction power as it is by rule undefined.\\
+		\hline
+		
+	\end{tabular}
+
+\end{itemize}
+
+
+\subsection{Non-Functional Requirements}
+\begin{itemize}
+
+\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & NFR1  \\ 
+		\hline
+		\textbf{TYPE} & Non-Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 4  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & The error message displayed by the system \\& should be relevant so that the user can understand the cause\\
+		\hline
+		\textbf{Rationale} & The type of mistake should be known to user.\\
+		\hline
+		
+	\end{tabular}
+	
+	\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & NFR2  \\ 
+		\hline
+		\textbf{TYPE} & Non-Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 4  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & Easy Navigation for Interface.\\
+		\hline
+		\textbf{Rationale} & Usability of the system should be high .\\
+		\hline
+		
+	\end{tabular}
+
+\newpage
+
+	\item	\begin{tabular}{|| l ||c  | c||}
+		\hline \hline
+		\textbf{ID} & NFR3  \\ 
+		\hline
+		\textbf{TYPE} & Non-Functional   \\
+		\hline
+		\textbf{VERSION} & 1.0  \\ 
+		\hline
+		\textbf{Priority} & 4  \\
+		\hline
+		\textbf{Risk} & Low  \\ 
+		\hline
+		\textbf{Description} & The result displayed should be of high accuracy and precision\\
+		\hline
+		\textbf{Rationale} & Correctness of the system is in question.\\
+		\hline
+		
+	\end{tabular}
+	
+	
+	
+	
+\end{itemize}
+
+\newpage
+
+\begin{center}
+    \chapter{\Large\textbf{PROBLEM 3}}
+\end{center}
+
+\section{Algorithm and its Subordinate Functions}
+    \subsection{Method-1}
+        \begin{algorithm}[H]
+        Begin: \\
+        1. checkIfInputsAreValidNumbers(x,y)\\
+        2. IF x is 0 AND y $\leq$ 0 THEN \\
+        3. $\hspace{2em}$THROW EXCEPTION \\
+        4. ELSE IF x $\leq$ 0 AND y $>$ 0 and $<$1 THEN \\
+        5. $\hspace{2em}$THROW EXCEPTION \\
+        6. ELSE IF x and y are integers\\
+        7. $\hspace{2em}$SET finalResult to 1 \\
+        8. $\hspace{2em}$SET COUNTER to 0\\
+        9. $\hspace{2em}$WHILE COUNTER $\leq$ y \\
+        10.$\hspace{4em}$ UPDATE finalResult = finalResult * x\\
+        11.$\hspace{4em}$ INCREMENT COUNTER by 1\\
+        12.$\hspace{2em}$ PRINT finalResult \\
+        13.ELSE IF y is fraction\\
+        14.$\hspace{2em}$decimal\_power(x,y)\\
+        22.PRINT finalResult \\
+        End\\
+
+        \caption{Power-Function (x,y)}
+        \end{algorithm}
+       
+        \vspace{0.5cm}
+       
+        \begin{procedure}
+        \caption{ checkIfInputsAreValidNumbers(x,y)}
+        Begin:\\
+        1. IF  x $\in -\infty$  to  +$\infty$ and y $\in -\infty$  to  +$\infty$\\
+        2. $\hspace{2em}$SEND TRUE\\
+        3. ELSE\\
+        4. $\hspace{2em}$RAISE EXCEPTION and SEND FALSE\\
+        End\\
+        \end{procedure}
+        
+        \vspace{0.5cm}
+        
+        \begin{procedure}
+        Begin:\\
+        \caption{ whole\_answer\_from\_decimal\_power(x,y)}
+        1. SET finalResult to 1\\
+        2. SET COUNTER TO Y\\
+        3. WHILE COUNTER$>$0\\
+        4. $\hspace{2em}$finalResult = finalResult * x\\
+        5. $\hspace{2em}$DECREMENT COUNTER by 1\\
+        6. $\hspace{2em}$DECREMENT y by 1\\
+        7. $\hspace{2em}$ IF y$<$0\\
+        8. $\hspace{2em}$ BREAK LOOP\\
+        9. RETURN finalResult and y\\
+        End
+        
+        \end{procedure}
+       
+        \vspace{0.5cm}
+       
+       \begin{procedure}
+        Begin:\\
+        \caption{ power\_greater\_than\_1(x,y)}
+        1. IF y$>$1\\
+        2. $\hspace{2em}$whole\_answer\_from\_decimal\_power(x,y)\\
+        3. RETURN [finalResult and y]\\
+        End
+        
+        \end{procedure}
+       
+        \vspace{0.5cm}
+       
+        \begin{procedure}
+        Begin:\\
+        \caption{ Approx\_Root\_Value(x,y,Initial\_Root_Value,precision)}
+        1. SET Initial Root\_Value+= precision\\
+        2. [val,y]=whole\_answer\_from\_decimal\_power(x,y)\\
+        3. WHILE val$<$x:\\
+        4. $\hspace{2em}$ SET Initial Root Value+= precision\\
+        2. $\hspace{2em}$[val,y]=whole\_answer\_from\_decimal\_power(x,y)\\\\
+        9. RETURN Root\_Value\\
+        End
+        \end{procedure}
+       
+        \vspace{0.5cm}
+       
+       \begin{procedure}
+        Begin:\\
+        \caption{ power\_greater\_than\_1(x,y)}
+        1. SET numerator = exponent;\\
+        2. SET denominator\_root = 1;\\
+        3. while NOT ((numerator * denominator\_root) \% 1 == 0):\\
+        4.$\hspace{2em}$INCREMENT denominator\_root BY 1;\\
+        5.decimal\_to\_fraction = {numerator, denominator_root};\\
+        6. SET accurate = 1;\\
+        7. Root\_Value = Approx\_Root\_Value(base, decimal_to_fraction[1], 0, accurate);\\
+        8. WHILE(base $<$ whole\_answer\_from\_decimal\_power(Root\_Value, decimal\_to\_fraction[1])[0] && accurate $>$ precision) \\
+        9.$\hspace{2em}$ COMPUTE Root\_Value -= accurate;\\
+        10.$\hspace{2em}$COMPUTE accurate *= 0.1;\\
+        11. GET Root\_Value = Approx\_Root\_Value(base, decimal\_to\_fraction[1], Root\_Value, accurate)\\
+        12. GET finalResults = {numerator, denominator\_root, Root\_Value}\\
+        13.RETURN finalResults\\
+        End
+        \end{procedure}
+       
+        \vspace{0.5cm}
+       
+        \begin{procedure}
+        Begin:\\
+        \caption{ decimal\_power(x,y)}
+        1.SET finalResult= 1\\
+        2.IF(exponent $>=$ 1)\\
+        3.$\hspace{2em}$GET exponentialValue = power\_greater\_than\_1(base,exponent)\\
+        4.$\hspace{2em}$SET finalResult = finalResult * exponentialValue[0]\\
+        5.$\hspace{2em}$SET exponent = exponentialValue[1]\\
+        6.IF(exponent $>$ 0 && exponent $<$ 1)\\
+        7.$\hspace{2em}$GET results = power\_less\_than\_1(base,exponent)\\
+        8.$\hspace{2em}$SET finalResult = finalResult * whole\_answer\_from\_decimal\_power(results[2], results[0]*results[1])[0]\\
+        9.RETURN finalResult\\
+        End\\
+        \end{procedure}
+\subsection{Method-2}
+        \begin{algorithm}[H]
+        Begin: \\
+        1. checkIfInputsAreValidNumbers(x,y)\\
+        2. IF x is 0 AND y $\leq$ 0 THEN \\
+        3. $\hspace{2em}$THROW EXCEPTION \\
+        4. ELSE IF x $\leq$ 0 AND y $>$ 0 and $<$1 THEN \\
+        5. $\hspace{2em}$THROW EXCEPTION \\
+        6. ELSE IF x and y are integers\\
+        7. $\hspace{2em}$SET finalResult to 1 \\
+        8. $\hspace{2em}$SET COUNTER to 0\\
+        9. $\hspace{2em}$WHILE COUNTER $\leq$ y \\
+        10.$\hspace{4em}$ UPDATE finalResult = finalResult * x\\
+        11.$\hspace{4em}$ INCREMENT COUNTER by 1\\
+        12.$\hspace{2em}$ PRINT finalResult \\
+        13.ELSE IF y is fraction\\
+        14.$\hspace{2em}$SET finalResult to 1 \\
+        15. $\hspace{2em}$SET COUNTER to 0\\
+        16.$\hspace{4em}$Extract Numerator
+        17.$\hspace{2em}$WHILE COUNTER $\leq$ y \\
+        18.$\hspace{4em}$ UPDATE finalResult = finalResult * x\\
+        19.$\hspace{4em}$ INCREMENT COUNTER by 1\\
+        20.$\hspace{2em}$ Store Result to finalResult\\
+        21.$\hspace{2em}$ Take N-th root of finalResult with Denominator being N.\\
+        22.$\hspace{2em}$ PRINT finalResult \\
+        End\\
+
+        \caption{Compute\_power (x,y)}
+        \end{algorithm}
+       
+        \vspace{0.5cm}
+       
+        \begin{procedure}
+        \caption{checkIfInputsAreValidNumbers(x,y)}
+        begin:\\
+        1. IF  x $\in -\infty$  to  +$\infty$ and y $\in -\infty$  to  +$\infty$\\
+        2. $\hspace{2em}$SEND TRUE\\
+        3. ELSE\\
+        4. $\hspace{2em}$RAISE EXCEPTION and SEND FALSE\\
+        end
+        \end{procedure}
+       
+       
+        \setcounter{algocf}{0}
+       
+
+       
+        \newpage
+       
+        \subsection{Explanation}
+        \begin{enumerate}
+        The two Power Function algorithms stated above each have various benefits and drawbacks in comparison to one another.  The other is based on the algorithm of finding the nth root, whereas the first is combination of multiple mathematical rules. In order to create a precise calculator, the sub-functions are employed to compute and validate various scenarios.
+        \end{enumerate}
+       
+    \subsection{Method Selection Reasoning}
+        \textbf{Selection of Method 1 depends on multiple factors.}
+
+        
+        \subsubsection{\item \textbf{Benefits of Selected Method:}}
+        
+        \begin{itemize}
+        \item \textbf{Understandability:} Method 1 is highly modular and also has low coupling and high cohesion. It is easy to read and highly maintainable.
+        \item \textbf{Exception Handling:} For all the error inputs exception handling has been done.
+        \item \textbf{Usability:} It is very easy for a user to use this system as in-depth navigation path assistance is provided through proper instructions on the screen.
+        \end{itemize}
+        
+        \subsubsection{\item \textbf{Disadvantages of Selected Method:}}
+        
+       
+        \begin{itemize}
+            \item \textbf{Code length:} Method 1 is big in comparison to method 2.
+            \item \textbf{Complexity:} Method 1 has more space and time complexity than method 2.
+            \item \textbf{Interface:} No UI is present the program runs on the console.
+           
+        \end{itemize}
+        \textbf{Method 2 Insights.}
+        \subsubsection{\item \textbf{Benefits of Method 2:}}
+       
+        \begin{itemize}
+            \item \textbf{Complexity:} Method 2 has less time and space complexity in comparison to method 1.
+            \item \textbf{Readability:} Method 2 is small and concise hence easy to read..
+            \item \textbf{High Cohesion:} Method 2 function are not dependent on other methods.
+        \end{itemize}
+       
+
+       \subsubsection{\item \textbf{Disadvantages of Method 2:}}
+
+        \begin{itemize}
+            \item \textbf{Accuracy of results:} Method 2 results are less accurate in comparison to Method 1.
+            \item \textbf{Exception Handling:} Not all the corner cases has been handled in this method.
+            \item \textbf{Covering of problem domain:} It is not covering all the problem domain hence it does not work for every input.
+           
+        \end{itemize}
+
+
+\newpage
+
+\section{\huge\centering Problem 4}
+\subsection{\large Coding Files}
+\item 1. F7.java - This file contains the main implementation of power function.\\
+2. Test\_cases.java - This file contains all the test cases relevant to the main file implementation.
+\subsection{\large DEBUGGER}
+\item A debugger is a software tool that can aid in the development of software by spotting code problems at different stages of the creation of an operating system or an application. Debuggers examine a test run to determine which lines of code were skipped.During the project's coding phase, Intellij was the IDE employed. Additionally, Intellij's built-in debugger was used to troubleshoot issues that arose during the coding phase.
+
+\subsubsection{Advantages of Debugger}
+\begin{itemize}
+\item When you debug your code, the IDE shows you variable values in the source code next to their usages and lets you change the values
+\item One can also use the Smart Step-Into action to choose the specific method call you want to debug.
+\item IntelliJ IDEA’s built-in terminal lets you work with the command-line shell from your IDE without having to switch to a dedicated terminal application.
+\item The debugger interface has high usability and easy navigation.
+\end{itemize}
+
+
+\subsubsection{Disadvantages of Debugger}
+\begin{itemize}
+
+\item Slow performance or hangupus when starting the debugger.
+\item Too many features on the debuggers interface can confuse the beginner.
+\item Navigation can also be complex for the first time user.
+\item Because of the JVM's design, method breakpoints create a significant slowdown in the debugger because they are expensive and time consuming to test.
+
+\end{itemize}
+
+\subsubsection{SNAPSHOT}
+
+\includegraphics[scale=.7]{d2.png}\\[1cm]
+
+
+\subsection{\large Quality Attributes}
+\subsubsection{\bfseries Space-Efficient:}\item A measurement of how much memory is required for an algorithm to run is called space efficiency. In our project efficient data structures and algorithms has been used so that the overall requirement of the memory is less.\\
+\subsubsection{\bfseries Portability:}\item A computer program is said to be portable if it can run on an operating system other than the one it was designed for without requiring extensive rewriting. In our case Java programming language has been used, its runs on a compiler and follows object oriented paradigm these qualities make it highly portable. \\
+\subsubsection{\bfseries Maintainability:}\item The needs to be readable, testable, and reusable that's what makes it maintainable. Our code is highly modular, there is low coupling and high cohesion.\\
+\subsubsection{\bfseries Correctness:}\item According to the standpoint of software engineering, correctness is the observance of the standards that describe how users can interact with the software and how the software should perform when used correctly. Our code conforms to the above mentioned standards.\\
+\subsubsection{\bfseries Robustness:}\item When a piece of software can handle unexpected or wrong input, it is said to be robust. Our code is handling almost all the wrong cases that can happen in the case of power function.\\
+\subsubsection{\bfseries Time-efficient:}\item A general word used to describe the dependability, speed, and programming style utilized in producing codes for an application is "time efficiency." In our project specific standard of coding style is followed in order to make it time efficient.\\
+\subsubsection{\bfseries Usability:}\item The ability to modify or fix the code with ease and how reusable it is. It is practiced in our case to not add a lot of functionality to a single function.\\ 
+
+
+
+\subsection{Checkstyle}
+\item A static code analysis tool called Checkstyle is used in software development to determine whether Java source code complies with predetermined coding standards. It is therefore perfect for initiatives that aim to impose a coding standard. It can be made to support practically any coding standard and is highly flexible.
+
+
+\subsubsection{Advantages of Checkstyle}
+\begin{itemize}
+\item The capacity to make your own rules. A sizable number of styles are defined by Eclipse or Intellij, but Checkstyle offers more, and you can add your own unique rules. 
+\item  Improved outside tooling Due to the fact that Checkstyle was initially intended to be a standalone framework, it is much simpler to combine it with your external tools.
+\item Portable Between IDE's.
+\end{itemize}
+
+\subsubsection{SNAPSHOT}
+\includegraphics[scale=.7]{c1.png}\\[1cm]
+
+\subsubsection{Disadvantages of Checkstyle}
+\begin{itemize}
+    \item It is impossible to ascertain the complete inheritance hierarchy of type.
+    \item There is no access to the contents of other files because files are processed one at a time.
+    \item If the code cannot be compiled using the javac compiler, the parsing errors are quite challenging to understand.
+\end{itemize}
+
+
+
+\newpage
+\section{\bfseries\huge\centering Problem-5}
+\subsection{Junit}
+A unit testing framework for the Java programming language is called JUnit. It is a family of unit testing frameworks known as xUnit, and it is a key component in test-driven development.\\
+
+In order to build up the test data for a piece of code that may be tested first and then implemented, JUnit promotes the principle of "first testing then writing." Similar to "test a little, code a little, test a little, code a little," is this strategy. Programmer stress and debugging time are decreased as a result of the increased productivity of the programmer and the stability of the programme code. cases that identify and satisfy the functional requirement are traced below. 
+\newline
+
+\subsubsection{\textbf{Test Case 1}}\newline
+
+ID  \to  test\_1()
+
+Function \to F7.power\_positive(double, double)
+
+Input \to (1.0,5.0)
+
+Output \to 1.0
+
+Expected \to true
+
+Result \to Pass
+
+
+
+
+
+\subsubsection{\textbf{Test Case 2}}
+
+ID  \to   test\_2()
+
+Function \to F7.power\_negative(double, double)
+
+Input \to (2.0,-4.0)
+
+Output \to 0.25
+
+Expected \to True
+
+Result \to Pass
+
+
+
+\subsubsection{\textbf{Test Case 3}}
+
+ID  \to   test\_3()
+
+Function \to F7.Controller(2,-2.6)(double, double)
+
+Input \to (2.0,-2.6)
+
+Output \to 0.164938
+
+Expected \to True
+
+Result \to Pass
+
+
+\newpage
+\subsubsection{\textbf{Test Case 4}}
+
+ID  \to   test\_4()
+
+Function \to F7.Controller(double, double)
+
+Input \to (2.0,3.7)
+
+Output \to 12.996038
+
+Expected \to True
+
+Result \to Pass
+
+
+\subsubsection{\textbf{Test Case 5}}
+
+ID  \to   test\_5()
+
+Function \to F7.power\_positive(double, double)
+
+Input \to (1.0,5.0)
+
+Output \to 2.0
+
+Expected \to False
+
+Result \to Pass
+
+
+
+\subsubsection{\textbf{Test Case 6}}
+
+ID \to  test\_6()
+
+Function \to F7.decimal\_power(double, double)
+
+Input \to (1.0,-5.0)
+
+Output \to 15.0
+
+Expected \to False
+
+Result \to Pass
+
+
+\subsubsection{\textbf{Test Case 7}}
+
+ID  \to   test\_7()
+
+Function \to F7.decimal\_power(double, double)
+
+Input \to (2.0,-2.6)
+
+Output \to 6.050000
+
+Expected \to False
+
+Result \to Pass
+
+
+
+\subsubsection{\textbf{Test Case 8}}
+
+ID  \to   test\_8()
+
+Function \to F7.decimal\_power(double, double)
+
+Input \to (2.0,3.7)
+
+Output \to 12.900000
+
+Expected \to False
+
+Result \to Pass
+
+
+\subsubsection{\textbf{Test Case 9}}
+
+ID  \to   test\_9()
+
+Function \to F7.Controller(double, double)
+
+Input \to (0,0)
+
+Output \to -1.0
+
+Expected \to True
+
+Result \to Pass
+
+
+\subsubsection{\textbf{Test Case 10}}
+
+ID  --   test\_10()
+
+Function --- F7.decimal\_power(double, double)
+
+Input--- (0.0,3.7)
+
+Output \to 0
+
+Expected --- True
+
+Result --- Pass
+
+\begin{thebibliography}{9}
+    \bibitem{Junit-Testing}
+    Junit,
+    \\\texttt{https://www.tutorialspoint.com/junit/junit_overview.html}
+
+    \bibitem{Power Function}
+    Power Function,
+    \\\texttt{https://www.storyofmathematics.com/power-function}
+
+
+    \bibitem{Power Function Algebraic Expression}
+    Power Function Algebraic Expression,
+    \\\texttt{https://study.com/academy/lesson/what-is-a-power-function-equations-and-graphs.html}
+
+    \bibitem{Checkstyle}
+    Checkstyle,
+    \\\texttt{https://plugins.jetbrains.com/plugin/1065-checkstyle-idea}
+    
+    \bibitem{Implementation Reference}
+    Code Hint,
+    \\\texttt{https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/}
+    \end{thebibliography}
+\end{document}
