@@ -14,11 +14,11 @@ Documentation Details: latex_source: Contains the source file Report.tex that co
 File Structure:
 
 latex_source: source for generating report.
-SOEN_6011_F7/src/main/java/F7- Power Fuction and its subordinate functions.
-SOEN_6011_F7/src/main/java/Test_Cases - The test cases class for Power Function.
-SOEN_6011_F7\out\artifacts\SOEN_6011_F7_jar3 - Jar file for building the project.
-SOEN_6011_F7/checkstyle-checker.xml - Checkstyle for checking code conventions
-SOEN_6011_F7/pom.xml - maven file for building project.
-Report_40162512.pdf - Report in pdf format.
-Report.text
+1.SOEN_6011_F7/src/main/java/F7- Power Fuction and its subordinate functions.
+2.SOEN_6011_F7/src/main/java/Test_Cases - The test cases class for Power Function.
+3.SOEN_6011_F7\out\artifacts\SOEN_6011_F7_jar3 - Jar file for building the project.
+4.SOEN_6011_F7/checkstyle-checker.xml - Checkstyle for checking code conventions.
+5.SOEN_6011_F7/pom.xml - maven file for building project.
+6.Report_40162512.pdf - Report in pdf format.
+7.Report.text
 The code and all the stated artifacts can be found on Github
